@@ -28,7 +28,46 @@ export default function ProfileCard() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-primary)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', width: '100%', textAlign: 'left' }}>
-        <div style={{ flexShrink: 0 }}>
+        <div style={{ flexShrink: 0, position: 'relative' }}>
+          
+          {/* Instagram-style Note Bubble */}
+          <div style={{
+            position: 'absolute',
+            top: '30px',
+            right: '-10px',
+            zIndex: 10,
+            animation: 'float-note 3s ease-in-out infinite'
+          }}>
+            <div style={{
+              background: 'var(--glass-bg)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid var(--card-border)',
+              borderRadius: '20px',
+              padding: '8px 16px',
+              fontSize: '0.85rem',
+              fontWeight: '600',
+              color: 'var(--text-primary)',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+              position: 'relative'
+            }}>
+              Building cool stuff 🚀
+              
+              {/* Tail pointing towards avatar */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-5px',
+                left: '20px',
+                width: '10px',
+                height: '10px',
+                background: 'var(--glass-bg)',
+                borderBottom: '1px solid var(--card-border)',
+                borderRight: '1px solid var(--card-border)',
+                transform: 'rotate(45deg)',
+                zIndex: -1
+              }} />
+            </div>
+          </div>
+
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="-69.145 -27.812 329.366 298.565" width="300" height="300" style={{ pointerEvents: 'none' }}>
             <defs>
               <pattern id="profile-image" x="-69.145" y="-27.812" width="329.366" height="298.565" patternUnits="userSpaceOnUse">
@@ -188,6 +227,10 @@ export default function ProfileCard() {
           @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
+          }
+          @keyframes float-note {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
           }
           .marquee-container {
             display: flex;
