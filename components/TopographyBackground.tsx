@@ -7,7 +7,7 @@ export default function TopographyBackground() {
       <style>{`
         svg#topographic path {
           fill: none !important;
-          stroke: #3a3a3a !important;
+          stroke: var(--topo-stroke) !important;
           stroke-width: 1 !important;
           stroke-miterlimit: 0;
           stroke-dasharray: 500;
