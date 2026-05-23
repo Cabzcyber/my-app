@@ -47,7 +47,7 @@ export default function ProfileCard() {
           <div style={{
             position: 'absolute',
             top: '-35px',
-            left: '0px',
+            left: '-35px',
             zIndex: 10,
             animation: 'float-note 3s ease-in-out infinite'
           }}>
