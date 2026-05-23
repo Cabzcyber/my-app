@@ -33,8 +33,8 @@ export default function ProfileCard() {
           {/* Instagram-style Note Bubble */}
           <div style={{
             position: 'absolute',
-            top: '30px',
-            right: '-10px',
+            top: '5px',
+            right: '-60px',
             zIndex: 10,
             animation: 'float-note 3s ease-in-out infinite'
           }}>
@@ -50,18 +50,18 @@ export default function ProfileCard() {
               boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
               position: 'relative'
             }}>
-              Building cool stuff 🚀
+              Nalingaw sa Portfolio?
               
               {/* Tail pointing towards avatar */}
               <div style={{
                 position: 'absolute',
-                bottom: '-5px',
-                left: '20px',
-                width: '10px',
-                height: '10px',
+                bottom: '8px',
+                left: '-5px',
+                width: '12px',
+                height: '12px',
                 background: 'var(--glass-bg)',
                 borderBottom: '1px solid var(--card-border)',
-                borderRight: '1px solid var(--card-border)',
+                borderLeft: '1px solid var(--card-border)',
                 transform: 'rotate(45deg)',
                 zIndex: -1
               }} />
