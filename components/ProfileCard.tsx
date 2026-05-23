@@ -64,7 +64,7 @@ export default function ProfileCard() {
               position: 'relative',
               whiteSpace: 'nowrap'
             }}>
-              Nalingaw sa Portfolio?
+              proposal? ready?
               
               {/* Tail pointing left towards avatar */}
               <div style={{
@@ -218,6 +218,7 @@ export default function ProfileCard() {
             <ul style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.5rem' }}><strong>English:</strong> Full professional proficiency</li>
               <li><strong>Tagalog:</strong> Professional working proficiency</li>
+              
             </ul>
           </div>
         )}
