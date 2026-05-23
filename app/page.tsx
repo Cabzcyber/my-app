@@ -5,7 +5,7 @@ import PortfolioShowcase from '../components/PortfolioShowcase';
 
 export default function Home() {
   return (
-    <main style={{ background: '#232323', minHeight: '100vh', position: 'relative' }}>
+    <main style={{ background: 'var(--bg-primary)', minHeight: '100vh', position: 'relative' }}>
       
       {/* Fixed background layer */}
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 0, pointerEvents: 'none' }}>

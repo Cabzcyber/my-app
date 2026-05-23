@@ -48,9 +48,9 @@ export default function PortfolioShowcase() {
   ];
 
   return (
-    <div style={{ width: '100%', color: 'white', marginTop: '0rem' }}>
+    <div style={{ width: '100%', color: 'var(--text-primary)', marginTop: '0rem' }}>
       {/* Tabs */}
-      <div style={{ display: 'flex', gap: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem', marginBottom: '2rem' }}>
+      <div style={{ display: 'flex', gap: '1.5rem', borderBottom: '1px solid var(--hover-bg)', paddingBottom: '0.5rem', marginBottom: '2rem' }}>
         {['Certifications', 'Projects'].map(tab => (
           <a
             key={tab}
@@ -59,7 +59,7 @@ export default function PortfolioShowcase() {
             style={{
               fontSize: '1.2rem',
               fontWeight: activeTab === tab ? 'bold' : 'normal',
-              color: activeTab === tab ? '#568aa3' : '#888',
+              color: activeTab === tab ? '#568aa3' : 'var(--text-muted)',
               borderBottom: activeTab === tab ? '2px solid #568aa3' : '2px solid transparent',
               paddingBottom: '0.5rem',
               cursor: 'pointer',
@@ -97,21 +97,21 @@ export default function PortfolioShowcase() {
               <div key={`${cert.id}-${index}`} style={{
                 minWidth: '280px',
                 flex: '0 0 auto',
-                background: 'rgba(255,255,255,0.03)',
+                background: 'var(--card-bg)',
                 borderRadius: '12px',
-                border: '1px solid rgba(255,255,255,0.05)',
+                border: '1px solid var(--card-border)',
                 overflow: 'hidden',
                 transition: 'transform 0.2s, border-color 0.2s',
                 display: 'flex',
                 flexDirection: 'column',
                 cursor: 'pointer'
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}>
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'var(--hover-border)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'var(--card-border)'; }}>
                 <img src={cert.image} alt={cert.title} style={{ width: '100%', height: '160px', objectFit: 'contain', backgroundColor: 'rgba(255,255,255,0.02)' }} />
                 <div style={{ padding: '1.25rem', flex: 1 }}>
-                  <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#e0e0e0', marginBottom: '0.5rem' }}>{cert.title}</h3>
-                  <p style={{ fontSize: '0.9rem', color: '#aaa', lineHeight: '1.4' }}>{cert.caption}</p>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{cert.title}</h3>
+                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.4' }}>{cert.caption}</p>
                 </div>
               </div>
             ))}
@@ -126,36 +126,36 @@ export default function PortfolioShowcase() {
           }}>
             {projects.map(proj => (
               <div key={proj.id} style={{
-                background: 'rgba(255,255,255,0.03)',
+                background: 'var(--card-bg)',
                 borderRadius: '12px',
-                border: '1px solid rgba(255,255,255,0.05)',
+                border: '1px solid var(--card-border)',
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
                 transition: 'transform 0.2s, border-color 0.2s'
               }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; }}>
+              onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'var(--hover-border)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = 'var(--card-border)'; }}>
                 <img src={proj.image} alt={proj.title} style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
                 <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#e0e0e0', marginBottom: '0.75rem' }}>{proj.title}</h3>
-                    <p style={{ fontSize: '0.9rem', color: '#aaa', lineHeight: '1.5', marginBottom: '1.5rem' }}>{proj.desc}</p>
+                    <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--text-primary)', marginBottom: '0.75rem' }}>{proj.title}</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: '1.5', marginBottom: '1.5rem' }}>{proj.desc}</p>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 'auto' }}>
                     <a href={proj.repo} target="_blank" rel="noopener noreferrer" style={{
                       padding: '0.5rem',
                       borderRadius: '50%',
-                      backgroundColor: 'rgba(255,255,255,0.05)',
-                      color: '#ccc',
+                      backgroundColor: 'var(--card-border)',
+                      color: 'var(--text-secondary)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       transition: 'all 0.2s',
                       textDecoration: 'none'
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.backgroundColor = '#568aa3'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = '#ccc'; e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)'; }}>
+                    onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.backgroundColor = '#568aa3'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.backgroundColor = 'var(--card-border)'; }}>
                       <Github size={18} />
                     </a>
                   </div>

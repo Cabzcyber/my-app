@@ -43,13 +43,13 @@ export default function MiniPlayer() {
       display: 'flex',
       alignItems: 'center',
       gap: '0.75rem',
-      background: 'rgba(25, 25, 25, 0.6)',
+      background: 'var(--glass-bg)',
       backdropFilter: 'blur(10px)',
       border: '1px solid rgba(255, 255, 255, 0.1)',
       borderRadius: '30px',
       padding: '0.4rem 1rem 0.4rem 0.4rem',
       boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-      color: '#e0e0e0',
+      color: 'var(--text-primary)',
       fontFamily: 'system-ui, sans-serif'
     }}>
       <audio ref={audioRef} src="/humble.mp3" loop />
@@ -65,7 +65,7 @@ export default function MiniPlayer() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: 'var(--text-primary)',
           cursor: 'pointer',
           transition: 'transform 0.2s',
         }}
@@ -80,7 +80,7 @@ export default function MiniPlayer() {
       </button>
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <span style={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#fff', letterSpacing: '0.5px' }}>HUMBLE.</span>
+        <span style={{ fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--text-primary)', letterSpacing: '0.5px' }}>HUMBLE.</span>
         <span style={{ fontSize: '0.65rem', color: '#568aa3' }}>Kendrick Lamar</span>
       </div>
       

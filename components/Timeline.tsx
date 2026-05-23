@@ -54,9 +54,9 @@ export default function Timeline() {
                 <h3>{exp.title}</h3>
                 <p>
                   {exp.company}<br/>
-                  <span style={{color: '#aaa', fontSize: '0.85rem'}}>{exp.date}</span><br/>
+                  <span style={{color: 'var(--text-muted)', fontSize: '0.85rem'}}>{exp.date}</span><br/>
                   {exp.description && (
-                    <span style={{color: '#ccc', fontSize: '0.85rem', display: 'block', marginTop: '0.5rem'}}>
+                    <span style={{color: 'var(--text-secondary)', fontSize: '0.85rem', display: 'block', marginTop: '0.5rem'}}>
                       {exp.description}
                     </span>
                   )}
@@ -66,8 +66,8 @@ export default function Timeline() {
                   <button 
                     onClick={() => toggleExpand(exp.id)}
                     style={{
-                      background: 'rgba(255,255,255,0.05)',
-                      border: '1px solid rgba(255,255,255,0.1)',
+                      background: 'var(--card-border)',
+                      border: '1px solid var(--hover-bg)',
                       padding: '0.4rem 0.8rem',
                       borderRadius: '16px',
                       color: '#568aa3',
@@ -78,8 +78,8 @@ export default function Timeline() {
                       alignItems: 'center',
                       gap: '0.4rem'
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.background = '#568aa3'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#568aa3'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = '#568aa3'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = '#568aa3'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = '#568aa3'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--card-border)'; e.currentTarget.style.color = '#568aa3'; e.currentTarget.style.borderColor = 'var(--hover-bg)'; }}
                   >
                     {expandedIds.includes(exp.id) ? 'Hide skills' : 'See skills'}
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: expandedIds.includes(exp.id) ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
@@ -102,14 +102,14 @@ export default function Timeline() {
                         style={{ 
                           transition: 'color 0.2s, transform 0.2s', 
                           cursor: 'default', 
-                          color: '#ccc', 
+                          color: 'var(--text-secondary)', 
                           fontSize: '0.85rem', 
                           display: 'flex', 
                           alignItems: 'center', 
                           gap: '0.5rem' 
                         }}
                         onMouseEnter={(e) => { e.currentTarget.style.color = '#568aa3'; e.currentTarget.style.transform = 'translateX(6px)'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.color = '#ccc'; e.currentTarget.style.transform = 'none'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.transform = 'none'; }}
                       >
                         <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>•</span> {skill}
                       </div>

@@ -1,4 +1,4 @@
-$color-timeline: #568aa3;
+$colorvar(--timeline-line): #568aa3;
 $timeline-line-width: 1px;
 $timeline-left-margin: 2em;
 $timeline-left-padding: 2em;
@@ -7,12 +7,12 @@ $timeline-bullet-width: .7em;
 
 .timelineContainer {
   position: relative;
-  color: white;
+  color: var(--text-primary);
 }
 .jumpTo button {
-  background: transparent;
-  color: white;
-  border: 1px solid white;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 2px solid var(-var(--timeline-line)-dot);
   padding: 0.5rem 1rem;
   cursor: pointer;
   margin-bottom: 2rem;
@@ -27,7 +27,7 @@ $timeline-bullet-width: .7em;
   margin: 0;
   padding: 0;
   list-style: none;
-  border-left: 2px solid $color-timeline;
+  border-left: 2px solid var(-var(--timeline-line)-line);
   margin-left: 1rem;
   padding-left: 2rem;
   padding-bottom: 2rem;
@@ -42,7 +42,7 @@ $timeline-bullet-width: .7em;
     }
 
     p {
-      color: #aaa;
+      color: var(--text-secondary);
     }
 
     h3::before {
@@ -52,7 +52,7 @@ $timeline-bullet-width: .7em;
       top: 5px;
       width: 12px;
       height: 12px;
-      background: $color-timeline;
+      background: $colorvar(--timeline-line);
       border-radius: 50%;
     }
   }

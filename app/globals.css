@@ -1,8 +1,49 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
+  --bg-primary: #f8f9fa;
+  --topo-fill: #f8f9fa;
+  --topo-stroke: #e9ecef;
+  
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #888888;
+  
+  --card-bg: rgba(0, 0, 0, 0.04);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --hover-bg: rgba(0, 0, 0, 0.12);
+  --hover-border: rgba(0, 0, 0, 0.15);
+  
+  --brand-color: #568aa3;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --timeline-line: #dee2e6;
+  --timeline-dot: #4a4a4a;
   --background: #ffffff;
   --foreground: #171717;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #232323;
+  --topo-fill: #222;
+  --topo-stroke: #333;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #888888;
+  
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --hover-bg: rgba(255, 255, 255, 0.1);
+  --hover-border: rgba(255, 255, 255, 0.15);
+  
+  --brand-color: #568aa3;
+  --glass-bg: rgba(25, 25, 25, 0.6);
+  --timeline-line: #444;
+  --timeline-dot: #fff;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {

@@ -26,7 +26,7 @@ export default function ProfileCard() {
   const [activeTab, setActiveTab] = React.useState('About Me');
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'white' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-primary)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', width: '100%', textAlign: 'left' }}>
         <div style={{ flexShrink: 0 }}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="-69.145 -27.812 329.366 298.565" width="300" height="300" style={{ pointerEvents: 'none' }}>
@@ -44,10 +44,10 @@ export default function ProfileCard() {
         <div style={{ flex: 1, minWidth: 0 }}>
           <h1 style={{ fontSize: '1.6rem', fontWeight: 'bold', lineHeight: '1.2', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
             Luke Zichri Cabatingan 
-            <span style={{ fontSize: '1rem', fontWeight: 'normal', color: '#888', display: 'block', marginTop: '0.25rem' }}>(Cabz)</span>
+            <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)', display: 'block', marginTop: '0.25rem' }}>(Cabz)</span>
           </h1>
           <h2 style={{ color: '#568aa3', fontSize: '1rem', marginTop: '0.5rem', lineHeight: '1.4' }}>3rd Year IT Student</h2>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: '#888', fontSize: '0.9rem', marginTop: '0.4rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-muted)', fontSize: '0.9rem', marginTop: '0.4rem' }}>
             <span style={{ color: '#568aa3' }}><Globe size={16} /></span>
             <span>Cagayan de Oro, Philippines</span>
           </div>
@@ -62,9 +62,9 @@ export default function ProfileCard() {
             { Icon: Mail, href: 'mailto:cabatinganlukezichri@gmail.com' },
             { Icon: Discord, href: '#' }
           ].map(({ Icon, href }, i) => (
-            <a key={i} href={href} style={{ padding: '0.75rem', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.05)', color: '#ccc', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 50 }} 
-               onMouseEnter={(e) => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.backgroundColor = '#568aa3'; }}
-               onMouseLeave={(e) => { e.currentTarget.style.color = '#ccc'; e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)'; }}>
+            <a key={i} href={href} style={{ padding: '0.75rem', borderRadius: '50%', backgroundColor: 'var(--card-border)', color: 'var(--text-secondary)', transition: 'all 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', zIndex: 50 }} 
+               onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.backgroundColor = '#568aa3'; }}
+               onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.backgroundColor = 'var(--card-border)'; }}>
               <Icon size={20} />
             </a>
           ))}
@@ -74,10 +74,10 @@ export default function ProfileCard() {
           onClick={() => window.print()}
           style={{
             padding: '0.5rem 1.25rem',
-            backgroundColor: 'rgba(255,255,255,0.05)',
-            border: '1px solid rgba(255,255,255,0.1)',
+            backgroundColor: 'var(--card-border)',
+            border: '1px solid var(--hover-bg)',
             borderRadius: '24px',
-            color: '#e0e0e0',
+            color: 'var(--text-primary)',
             fontSize: '0.9rem',
             fontWeight: 'bold',
             cursor: 'pointer',
@@ -88,22 +88,22 @@ export default function ProfileCard() {
             position: 'relative',
             zIndex: 50
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#568aa3'; e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = '#568aa3'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = '#e0e0e0'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#568aa3'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = '#568aa3'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--card-border)'; e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.borderColor = 'var(--hover-bg)'; }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
           Print CV
         </button>
       </div>
 
-      <div style={{ display: 'flex', gap: '1.5rem', width: '100%', flexWrap: 'wrap', position: 'relative', zIndex: 50, paddingBottom: '0.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ display: 'flex', gap: '1.5rem', width: '100%', flexWrap: 'wrap', position: 'relative', zIndex: 50, paddingBottom: '0.5rem', borderBottom: '1px solid var(--card-border)' }}>
         {['About Me', 'Skills', 'Education', 'Languages'].map((tab) => (
           <a 
             key={tab} 
             href={`#${tab.replace(/\s+/g, '')}`}
             onClick={(e) => { e.preventDefault(); setActiveTab(tab); }}
             style={{ 
-              color: activeTab === tab ? '#568aa3' : '#888', 
+              color: activeTab === tab ? '#568aa3' : 'var(--text-muted)', 
               cursor: 'pointer', 
               fontSize: '1rem', 
               fontWeight: activeTab === tab ? 'bold' : 'normal',
@@ -119,7 +119,7 @@ export default function ProfileCard() {
         ))}
       </div>
       
-      <div style={{ width: '100%', textAlign: 'left', marginBottom: '1rem', padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ width: '100%', textAlign: 'left', marginBottom: '1rem', padding: '1.5rem', background: 'var(--card-bg)', borderRadius: '12px', border: '1px solid var(--card-border)' }}>
         {activeTab === 'Skills' && (
           <div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#568aa3' }}>Skills</h3>
@@ -135,12 +135,12 @@ export default function ProfileCard() {
                 { category: 'Office Tools', skills: ['Google Workspace', 'Google Docs', 'Google Sheets', 'Google Drive', 'Google Meet', 'Calendar', 'Gmail', 'Microsoft Outlook', 'WPS Office'] },
               ].map((group, idx) => (
                 <div key={idx}>
-                  <h4 style={{ fontSize: '0.95rem', color: '#aaa', marginBottom: '0.75rem', fontWeight: '600' }}>{group.category}</h4>
+                  <h4 style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '0.75rem', fontWeight: '600' }}>{group.category}</h4>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {group.skills.map((skill, i) => (
-                      <span key={i} style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', color: '#e0e0e0', backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: '20px', transition: 'all 0.2s', cursor: 'pointer' }}
-                            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)'; e.currentTarget.style.color = '#fff'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = '#e0e0e0'; }}>
+                      <span key={i} style={{ padding: '0.4rem 0.8rem', fontSize: '0.85rem', color: 'var(--text-primary)', backgroundColor: 'var(--card-border)', borderRadius: '20px', transition: 'all 0.2s', cursor: 'pointer' }}
+                            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--hover-border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'var(--card-border)'; e.currentTarget.style.color = 'var(--text-primary)'; }}>
                         {skill}
                       </span>
                     ))}
@@ -154,7 +154,7 @@ export default function ProfileCard() {
         {activeTab === 'About Me' && (
           <div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '1rem', color: '#568aa3' }}>About Me</h3>
-            <p style={{ lineHeight: '1.6', color: '#ccc', fontSize: '0.95rem' }}>
+            <p style={{ lineHeight: '1.6', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
               To Learn and Earned Experience, A 3rd year IT student, cybersecurity and IT support enthusiast eager to gain and apply practical experience both technical and ethical work basis beyond my comfort zone. Also consistently gaining theoretical knowledge in school (Top Performing student) and grabbing opportunities in online education courses in my aspiring tech field.
             </p>
           </div>
@@ -163,7 +163,7 @@ export default function ProfileCard() {
         {activeTab === 'Education' && (
           <div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '1rem', color: '#568aa3' }}>Educational Background</h3>
-            <ul style={{ color: '#ccc', fontSize: '0.95rem', listStyle: 'none', padding: 0 }}>
+            <ul style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.5rem' }}><strong>College:</strong> University of Science and Technology of Southern Philippines - Jasaan Campus</li>
               <li style={{ marginBottom: '0.5rem' }}><strong>Senior High School:</strong> Saint Ignatius Technical College Of Tagoloan</li>
               <li style={{ marginBottom: '0.5rem' }}><strong>Junior High School:</strong> Saint Mary's Academy of Jasaan</li>
@@ -175,7 +175,7 @@ export default function ProfileCard() {
         {activeTab === 'Languages' && (
           <div>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '1rem', color: '#568aa3' }}>Languages</h3>
-            <ul style={{ color: '#ccc', fontSize: '0.95rem', listStyle: 'none', padding: 0 }}>
+            <ul style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '0.5rem' }}><strong>English:</strong> Full professional proficiency</li>
               <li><strong>Tagalog:</strong> Professional working proficiency</li>
             </ul>
