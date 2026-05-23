@@ -46,8 +46,8 @@ export default function ProfileCard() {
           {/* Instagram-style Note Bubble */}
           <div style={{
             position: 'absolute',
-            top: '-35px',
-            left: '-70px',
+            top: '-45px',
+            left: '-90px',
             zIndex: 10,
             animation: 'float-note 3s ease-in-out infinite'
           }}>
