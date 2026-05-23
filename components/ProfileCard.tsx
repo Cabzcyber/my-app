@@ -28,13 +28,26 @@ export default function ProfileCard() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', color: 'var(--text-primary)' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', width: '100%', textAlign: 'left' }}>
-        <div style={{ flexShrink: 0, position: 'relative' }}>
+        <div style={{ flexShrink: 0 }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-69.145 -27.812 329.366 298.565" width="300" height="300" style={{ pointerEvents: 'none' }}>
+            <defs>
+              <pattern id="profile-image" x="-69.145" y="-27.812" width="329.366" height="298.565" patternUnits="userSpaceOnUse">
+                <image href="/LUKE.JPG" x="15" y="-5" width="280" height="280" preserveAspectRatio="xMidYMin slice" />
+              </pattern>
+              <filter id="shape-fx" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="6" stdDeviation="7" floodColor="#000000" floodOpacity="0.18" />
+              </filter>
+            </defs>
+            <path d="M 119.250 -6.162 C 156.111 -7.812 147.117 48.104 178.381 21.619 C 209.646 48.104 161.021 106.622 203.371 95.050 C 240.221 106.622 225.230 201.141 197.236 219.786 C 169.241 201.141 131.220 219.403 101.650 250.753 C 63.280 219.403 83.255 187.145 -19.642 227.342 C -40.039 187.145 5.305 88.226 -49.145 113.750 C -38.695 88.226 -20.946 19.204 32.358 41.158 C 85.662 19.204 82.389 -7.812 119.250 -6.162 Z" fill="url(#profile-image)" stroke="#bebbbb" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" filter="url(#shape-fx)" />
+          </svg>
+        </div>
+        <div style={{ flex: 1, minWidth: 0, position: 'relative' }}>
           
           {/* Instagram-style Note Bubble */}
           <div style={{
             position: 'absolute',
-            top: '5px',
-            right: '-60px',
+            top: '-35px',
+            left: '0px',
             zIndex: 10,
             animation: 'float-note 3s ease-in-out infinite'
           }}>
@@ -48,39 +61,27 @@ export default function ProfileCard() {
               fontWeight: '600',
               color: 'var(--text-primary)',
               boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-              position: 'relative'
+              position: 'relative',
+              whiteSpace: 'nowrap'
             }}>
               Nalingaw sa Portfolio?
               
-              {/* Tail pointing towards avatar */}
+              {/* Tail pointing left towards avatar */}
               <div style={{
                 position: 'absolute',
-                bottom: '8px',
-                left: '-5px',
+                top: '50%',
+                left: '-6px',
                 width: '12px',
                 height: '12px',
                 background: 'var(--glass-bg)',
                 borderBottom: '1px solid var(--card-border)',
                 borderLeft: '1px solid var(--card-border)',
-                transform: 'rotate(45deg)',
+                transform: 'translateY(-50%) rotate(45deg)',
                 zIndex: -1
               }} />
             </div>
           </div>
 
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-69.145 -27.812 329.366 298.565" width="300" height="300" style={{ pointerEvents: 'none' }}>
-            <defs>
-              <pattern id="profile-image" x="-69.145" y="-27.812" width="329.366" height="298.565" patternUnits="userSpaceOnUse">
-                <image href="/LUKE.JPG" x="15" y="-5" width="280" height="280" preserveAspectRatio="xMidYMin slice" />
-              </pattern>
-              <filter id="shape-fx" x="-50%" y="-50%" width="200%" height="200%">
-                <feDropShadow dx="0" dy="6" stdDeviation="7" floodColor="#000000" floodOpacity="0.18" />
-              </filter>
-            </defs>
-            <path d="M 119.250 -6.162 C 156.111 -7.812 147.117 48.104 178.381 21.619 C 209.646 48.104 161.021 106.622 203.371 95.050 C 240.221 106.622 225.230 201.141 197.236 219.786 C 169.241 201.141 131.220 219.403 101.650 250.753 C 63.280 219.403 83.255 187.145 -19.642 227.342 C -40.039 187.145 5.305 88.226 -49.145 113.750 C -38.695 88.226 -20.946 19.204 32.358 41.158 C 85.662 19.204 82.389 -7.812 119.250 -6.162 Z" fill="url(#profile-image)" stroke="#bebbbb" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" filter="url(#shape-fx)" />
-          </svg>
-        </div>
-        <div style={{ flex: 1, minWidth: 0 }}>
           <h1 style={{ fontSize: '1.6rem', fontWeight: 'bold', lineHeight: '1.2', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
             Luke Zichri Cabatingan 
             <span style={{ fontSize: '1rem', fontWeight: 'normal', color: 'var(--text-muted)', display: 'block', marginTop: '0.25rem' }}>(Cabz)</span>
